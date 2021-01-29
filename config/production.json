@@ -1,0 +1,8 @@
+{
+    "mongoUri": "mongodb://mus:L!ght$p33d@cluster0-shard-00-00.igdx8.mongodb.net:27017,cluster0-shard-00-01.igdx8.mongodb.net:27017,cluster0-shard-00-02.igdx8.mongodb.net:27017/<dbname>?ssl=true&replicaSet=atlas-y70a3m-shard-0&authSource=admin&retryWrites=true&w=majority",
+    "mongoLocalUri": "mongodb://localhost:27017/",
+    "mongoRemoteUri": "mongodb+srv://mus:musDev1914@cluster0.1zuzh.mongodb.net/devConnector?retryWrites=true&w=majority",
+    "jwtSecret": "musSecretWebToken",
+    "githubClientId": "dcd328a45ad0de5786cf",
+    "githubClientSecret": "743a76651b195a05ba24ee6fe2c4b75d8c69cbbe"
+}

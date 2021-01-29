@@ -3,6 +3,12 @@
 /workspace.xml
 # Editor-based HTTP Client requests
 /httpRequests/
+/backend/
+/frontend/
+
+/node_modules
+package-lock.json
+/config/keys_dev.js
 
 /config/default.json
 

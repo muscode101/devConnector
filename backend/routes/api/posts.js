@@ -124,7 +124,7 @@ router.post('/comment/:id',
             post.comments.unshift(newComment)
             post.save()
 
-            // const post = await newPost.save()
+            // const posts = await newPost.save()
             await res.json(post.comments)
         } catch (e) {
             console.error(e)

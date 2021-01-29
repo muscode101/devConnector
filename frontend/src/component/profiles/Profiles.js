@@ -9,12 +9,14 @@ const Profiles = ({getProfiles, profile: {profiles, loading}}) => {
 
     useEffect(() =>
             getProfiles()
-        , [])
+        , [getProfiles])
 
-    const loadProfiles = () =>
-        Object.keys(profiles).length > 0 ? profiles.map(
-            profile => <ProfileItem key={profile._id} profile={profile}/>
-        ) : <h4>No profiles found...</h4>
+    const loadProfiles = () => {
+        if (profiles)
+          return Object.keys(profiles).length > 0 ? profiles.map(
+                profile => <ProfileItem key={profile._id} profile={profile}/>
+            ) : <h4>No profiles found...</h4>
+    }
 
     return (
         <Fragment>

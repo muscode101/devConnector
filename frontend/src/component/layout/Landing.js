@@ -23,6 +23,7 @@ const Landing = ({isAuthenticated}) => {
                         <Link to="/login" className="btn btn-light">Login</Link>
                     </div>
                 </div>
+
             </div>
         </section>
     </Fragment>

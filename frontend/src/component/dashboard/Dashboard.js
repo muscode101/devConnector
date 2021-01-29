@@ -12,7 +12,7 @@ const Dashboard = ({getProfile, deleteAccount, auth: {user}, profile: {profile, 
 
     useEffect(() =>
         getProfile()
-    , [])
+    , [getProfile])
 
     const showDashBoardActions = () => {
         if (profile) {

@@ -2,7 +2,7 @@ import {CLEAR_PROFILE, GET_PROFILE, GET_PROFILES, GET_REPOS, PROFILE_ERROR, UPDA
 
 const initialState = [{
     profile: null,
-    profiles: {},
+    profiles: [],
     repos: [],
     loading: true,
     error: null

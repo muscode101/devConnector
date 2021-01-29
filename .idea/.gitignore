@@ -4,5 +4,5 @@
 # Editor-based HTTP Client requests
 /httpRequests/
 
-/../backend/config/default.json
+/config/default.json
 

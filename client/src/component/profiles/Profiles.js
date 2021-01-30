@@ -7,18 +7,15 @@ import ProfileItem from "./ProfileItem";
 
 const Profiles = ({getProfiles, profile: {profiles, loading}}) => {
 
-    const [myProfiles, setMyProfiles] = useState([])
-
     useEffect(() => {
             getProfiles()
-            setMyProfiles(profiles)
         }
         , [getProfiles])
 
 
     const loadProfiles = () => {
-        if (loading === false && profiles !== [])
-            return profiles ? profiles?.map(
+        if (loading === false )
+            return profiles !== [] ? profiles?.map(
                 profile => <ProfileItem key={profile?._id} profile={profile}/>
             ) : <h4>No profiles found...</h4>
     }

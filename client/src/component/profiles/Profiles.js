@@ -12,11 +12,20 @@ const Profiles = ({getProfiles, profile: {profiles, loading}}) => {
         , [getProfiles])
 
     const loadProfiles = () => {
-        if (profiles)
-          return Object.keys(profiles).length > 0 ? profiles.map(
+        if (!loading)
+            return Object.keys(profiles).length > 0 ? profiles?.map(
                 profile => <ProfileItem key={profile._id} profile={profile}/>
             ) : <h4>No profiles found...</h4>
     }
+
+    // const loadProfiles = () => {
+    //     !loading ?
+    //         profiles?.map(
+    //             profile => <ProfileItem key={profile?._id} profile={profile}/>
+    //         ) :
+    //         <h4>No profiles found...</h4>
+    //
+    // }
 
     return (
         <Fragment>
@@ -37,6 +46,10 @@ const Profiles = ({getProfiles, profile: {profiles, loading}}) => {
             }
         </Fragment>
     )
+}
+
+function isEmpty(value) {
+    return (value == null || value === '');
 }
 
 Profiles.propTypes = {

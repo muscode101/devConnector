@@ -21,12 +21,16 @@ const Posts = ({getPosts, post: {posts, loading}}) => {
             </p>
             <PostForm/>
             <div className='posts'>
-                { posts && posts.map(post =>{
+                { posts && posts?.map(post =>{
                     return <PostItem key={post._id} post={post}/>}
                 )}
             </div>
         </Fragment>
     )
+}
+
+function isEmpty(value) {
+    return (value == null || value === '');
 }
 
 Posts.prototype = {

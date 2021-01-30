@@ -15,10 +15,10 @@ const Dashboard = ({getProfile, deleteAccount, auth: {user}, profile: {profile, 
     , [getProfile])
 
     const showDashBoardActions = () => {
-        if (profile) {
+        if (profile?.status ) {
             return <Fragment>
                 <DashboardActions/>
-                { <Education education={profile.education}/>}
+                {<Education education={profile.education}/>}
                 {<Experience experience={profile.experience}/>}
                 <div className='my-2'>
                     <button className='btn btn-danger' onClick={() => deleteAccount()}>
@@ -34,21 +34,15 @@ const Dashboard = ({getProfile, deleteAccount, auth: {user}, profile: {profile, 
                 <Link to='/create-profile' className='btn btn-primary my-1'>Create Profile</Link>
             </Fragment>
         }
-
     }
 
-
-    return loading && profile === null ?
-        <Spinner/> :
+    return loading && profile === null ? <Spinner/> :
         <Fragment>
             <h1 className='large text-primary'>DashBoard</h1>
             <p className='lead'>
                 <i className='fas fa-user'/> Welcome {user && user.name}
             </p>
-
             {showDashBoardActions()}
-
-
         </Fragment>
 }
 

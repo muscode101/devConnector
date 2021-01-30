@@ -14,6 +14,7 @@ const Profiles = ({getProfiles, profile: {profiles, loading}}) => {
 
 
     const loadProfiles = () => {
+        console.log(typeof(profiles)     )
         if (loading === false )
             return profiles !== [] ? profiles?.map(
                 profile => <ProfileItem key={profile?._id} profile={profile}/>

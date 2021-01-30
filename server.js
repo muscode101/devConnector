@@ -5,7 +5,8 @@ const connectDB = require('./config/db')
 
 const app = express()
 app.use(cors())
-const PORT = process.env.port || 5000
+// const PORT = process.env.port || 5000
+const PORT = process.env.port
 
 connectDB()
 app.use(express.json())
@@ -21,7 +22,7 @@ app.listen(PORT, () => console.log(`sever started on port ${PORT} `))
 function serveStaticAsserts() {
     // if (process.env.NODE_ENV === 'production') {
         app.use(express.static('client/build'))
-        app.get('*', (req, res) => {
+        app.get('*  ', (req, res) => {
             res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
         })
     // }

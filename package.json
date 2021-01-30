@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "a social network for developers",
   "main": "server.js",
+  "proxy": "http://localhost:5000",
   "scripts": {
     "start": "node server",
     "server": "nodemon server",

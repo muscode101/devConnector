@@ -5,9 +5,8 @@ import PropTypes from "prop-types";
 
 const Landing = ({isAuthenticated}) => {
 
-    if (isAuthenticated) {
-        return <Redirect to='/dashboard'/>
-    }
+    if (isAuthenticated) return <Redirect to='/dashboard'/>
+
 
     return <Fragment>
         <section className="landing">

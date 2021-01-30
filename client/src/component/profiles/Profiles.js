@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect} from "react";
+import React, {Fragment, useEffect, useState} from "react";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {getProfiles} from "../../actions/profile";
@@ -7,29 +7,24 @@ import ProfileItem from "./ProfileItem";
 
 const Profiles = ({getProfiles, profile: {profiles, loading}}) => {
 
-    useEffect(() =>
+    const [myProfiles, setMyProfiles] = useState([])
+
+    useEffect(() => {
             getProfiles()
+            setMyProfiles(profiles)
+        }
         , [getProfiles])
 
+
     const loadProfiles = () => {
-        if (!loading)
-            return Object.keys(profiles).length > 0 ? profiles?.map(
-                profile => <ProfileItem key={profile._id} profile={profile}/>
+        if (loading === false && profiles !== [])
+            return profiles ? profiles?.map(
+                profile => <ProfileItem key={profile?._id} profile={profile}/>
             ) : <h4>No profiles found...</h4>
     }
 
-    // const loadProfiles = () => {
-    //     !loading ?
-    //         profiles?.map(
-    //             profile => <ProfileItem key={profile?._id} profile={profile}/>
-    //         ) :
-    //         <h4>No profiles found...</h4>
-    //
-    // }
-
     return (
         <Fragment>
-            {console.log(`profiles ${profiles}`)}
             {
                 loading ? <Spinner/> : (
                     <Fragment>
@@ -46,10 +41,6 @@ const Profiles = ({getProfiles, profile: {profiles, loading}}) => {
             }
         </Fragment>
     )
-}
-
-function isEmpty(value) {
-    return (value == null || value === '');
 }
 
 Profiles.propTypes = {

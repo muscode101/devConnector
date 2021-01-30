@@ -349,6 +349,12 @@ button {
   text-align: center;
 }
 
+.spinner {
+  background: url('./img/spinner.gif') no-repeat;
+  border-radius: 50%;
+  border-color: transparent;
+}
+
 /* Profiles Page */
 .profile {
   display: grid;

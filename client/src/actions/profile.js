@@ -53,10 +53,11 @@ export const getProfiles = () => async dispatch => {
     } catch (err) {
         dispatch({
             type: PROFILE_ERROR,
-            payload: {msg: err.response.statusText, status: err.response.status}
+            payload: {msg: err.response?.statusText, status: err.response?.status}
         })
     }
 }
+
 export const getGithubRepos = gitUsername => async dispatch => {
     try {
         const res = await axios.get(`http://localhost:5000/api/profile/github/${gitUsername}`)
@@ -71,8 +72,6 @@ export const getGithubRepos = gitUsername => async dispatch => {
         })
     }
 }
-
-
 
 export const createProfile = ({formData, history, edit = false}) => async dispatch => {
     try {
@@ -173,6 +172,7 @@ export const deleteEducation = id => async dispatch => {
         handleErrors(err)
     }
 }
+
 export const deleteExperience = id => async dispatch => {
     try {
         const res = await axios.delete(
